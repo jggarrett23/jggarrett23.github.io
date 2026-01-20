@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script.js"></script>
+    <title>Jordan Garrett, PhD</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <ul class="nav-container">
+        <li><a href="#" onclick="showSection('about')">About Me</a></li>
+        <li><a href="#" onclick="showSection('resume')">Resume/CV</a></li>
+        <li><a href="#" onclick="showSection('research')">Research</a></li>
+        <li><a href="#" onclick="showSection('publications')">Publications</a></li>
+        <li class="dropdown">
+            <a href="javascript:void(0)">Projects ▼</a>
+            <div class="dropdown-content">
+                <a href="https://github.com/yourusername/repo/blob/main/forecasting.ipynb" target="_blank">Time Series Forecasting</a>
+                <a href="https://github.com/yourusername/repo/blob/main/rl.ipynb" target="_blank">Reinforcement Learning</a>
+                <a href="https://github.com/yourusername/repo/blob/main/radar.ipynb" target="_blank">Radar Time Frequency Analysis</a>
+            </div>
+        </li>
+    </ul>
+</nav>
+
+<section id="about">
+    <h1>About Me</h1>
+    <div class="bio-container">
+        <img src="headshot.jpeg" alt="Jordan Garrett" class="profile-pic">
+        <div id="about-text">
+            </div>
+    </div>
+    <div style="clear: both;"></div>
+</section>
+
+<section id="resume" class="hidden">
+    <h1>Resume / CV</h1>
+    <div class="experience">
+        <h3>Professional Experience</h3>
+        <p><span class="job-title">Senior Data Scientist</span> | Company Name | <span class="date">2022 - Present</span></p>
+        <ul>
+            <li>Developed XYZ algorithms for time series data.</li>
+            <li>Led a team of three junior researchers.</li>
+        </ul>
+    </div>
+    <div class="awards">
+        <h3>Awards</h3>
+        <ul>
+            <li>Best Paper Award - International Radar Conference (2024)</li>
+            <li>Excellence in Research Fellowship (2023)</li>
+        </ul>
+    </div>
+</section>
+
+<section id="research" class="hidden">
+    <h1>Research</h1>
+    <h3>Current Research Focus</h3>
+    <p><strong>Topic A:</strong> A brief summary of your main publication. This explains the methodology and why it matters in the field of Reinforcement Learning.</p>
+    <p><strong>Topic B:</strong> Summary of your work in Radar Signal Processing, focusing on time-frequency distributions.</p>
+</section>
+
+<section id="publications" class="hidden">
+    <h1>Publications</h1>
+    <ul>
+        <li>"Advanced Methods in Time Series Forecasting," *Journal of AI*, 2025.</li>
+        <li>"Deep Reinforcement Learning for Adaptive Radar," *IEEE Transactions*, 2024.</li>
+        <li>"A Survey of Time-Frequency Analysis," *Signal Processing Letters*, 2023.</li>
+    </ul>
+</section>
+
+<script>
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(sec => sec.classList.add('hidden'));
+        
+        // Show the selected section
+        document.getElementById(sectionId).classList.remove('hidden');
+    }
+</script>
+
+</body>
+</html>
