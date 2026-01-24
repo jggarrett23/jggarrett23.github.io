@@ -118,3 +118,147 @@ h1, h2 { color: var(--primary-color); }
         text-align: center;
     }
 }
+
+#contact-info {
+    display: flex;
+    justify-content: center;
+    justify-items: space-between;
+    gap: 10px;
+}
+
+#contact-info button {
+    border: solid 2px rgba(18, 102, 248, 1.0);
+    background: none;
+    color: rgba(18, 102, 248, 1.0);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#contact-info button:hover {
+    border: solid 2px rgba(18, 102, 248, 1.0);
+    background: rgba(18, 102, 248, 0.1);
+    color: rgba(18, 102, 248, 1.0);
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Ensure the resume section fills the screen */
+#resume {
+    max-width: 100%;
+    margin: 0;
+}
+
+.resume-container {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    position: relative;
+}
+
+/* Sidebar: Permanent and Sticky */
+.resume-sidebar {
+    flex: 0 0 260px;
+    height: calc(100vh - 100px);
+    position: sticky;
+    top: 100px; 
+    align-self: flex-start; /* Ensures the sidebar 'floats' inside the flex row */
+    background-color: #f9f9f9;
+    border-right: 1px solid #eee;
+    padding: 20px 10px;
+    box-sizing: border-box; /* Ensures padding is included in the width/height */
+    overflow-y: auto; /* Allow sidebar to scroll if you add more links later */
+}
+
+.resume-header-row {
+    margin-bottom: 30px;
+}
+
+/* Main Content: Takes the rest of the space */
+.resume-main-content {
+    flex: 1;
+    min-width: 0;
+    padding: 40px 60px;
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+/* Typography & Links */
+.sidebar-title {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+    margin-bottom: 20px;
+}
+
+.sidebar-links {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar-links li {
+    margin-bottom: 15px;
+}
+
+.sidebar-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.sidebar-links a:hover {
+    color: var(--accent-color, #0077b5);
+}
+
+.sub-links {
+    list-style: none;
+    padding-left: 15px;
+    margin-top: 10px;
+    border-left: 1px solid #ddd; /* Visual vertical line for hierarchy */
+}
+
+.sub-links a {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #666;
+}
+
+/* Responsive: Stack vertically on mobile */
+@media (max-width: 900px) {
+    .resume-container {
+        flex-direction: column;
+    }
+    .resume-sidebar {
+        flex: none;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        border-right: none;
+        border-bottom: 1px solid #eee;
+    }
+}
+
+/* Ensure smooth scrolling for anchors */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Responsive: On small screens, hide the push behavior */
+@media (max-width: 768px) {
+    .resume-sidebar.active {
+        position: fixed;
+        z-index: 1000;
+        width: 80%;
+    }
+}
+
+/* This ensures headers aren't hidden behind the nav bar when jumping to anchors */
+h1[id], h2[id], h3[id], h4[id] {
+    scroll-margin-top: 80px; 
+}

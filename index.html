@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
     <title>Jordan Garrett, PhD</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
 
@@ -26,35 +28,63 @@
     </ul>
 </nav>
 
+<!-- About Me -->
 <section id="about">
-    <h1>About Me</h1>
     <div class="bio-container">
         <img src="headshot.jpeg" alt="Jordan Garrett" class="profile-pic">
-        <div id="about-text">
-            </div>
+        <div id="about-text"></div>
     </div>
-    <div style="clear: both;"></div>
+    <div id="contact-info">
+        <a href="https://github.com/jggarrett23">
+        <button>
+            Github
+            <i class="fa-solid fa-link"></i>
+        </button>
+        </a>
+        <a href="https://www.linkedin.com/in/jordan-garrett-979042211/">
+        <button>
+            LinkedIn
+            <i class="fa-solid fa-link"></i>
+        </button>
+        </a>
+        <a href="https://scholar.google.com/citations?hl=en&user=ltZLROgAAAAJ">
+        <button>
+            Google Scholar
+            <i class="fa-solid fa-link"></i>
+        </button>
+        </a>
+    </div>
 </section>
 
+<!-- Resume / CV -->
 <section id="resume" class="hidden">
-    <h1>Resume / CV</h1>
-    <div class="experience">
-        <h3>Professional Experience</h3>
-        <p><span class="job-title">Senior Data Scientist</span> | Company Name | <span class="date">2022 - Present</span></p>
-        <ul>
-            <li>Developed XYZ algorithms for time series data.</li>
-            <li>Led a team of three junior researchers.</li>
-        </ul>
-    </div>
-    <div class="awards">
-        <h3>Awards</h3>
-        <ul>
-            <li>Best Paper Award - International Radar Conference (2024)</li>
-            <li>Excellence in Research Fellowship (2023)</li>
-        </ul>
+    <div class="resume-container">
+        <nav id="resume-sidebar" class="resume-sidebar">
+            <h2 class="sidebar-title">Contents</h2>
+            <ul class="sidebar-links">
+                <li><a href="#resume-title">Professional Experience</a>
+                    <ul class="sub-links">
+                        <li><a href="#pacific-science">Pacific Science & Engineering</a></li>
+                        <li><a href="#ucsb-research">UC Santa Barbara</a></li>
+                        <li><a href="#aimdyn">Aimdyn, Inc</a></li>
+                    </ul>
+                </li>
+                <li><a href="#fellowships">Fellowships</a></li>
+                <li><a href="#awards">Awards</a></li>
+                <li><a href="#education">Education</a></li>
+            </ul>
+        </nav>
+
+        <div class="resume-main-content">
+            <div class="resume-header-row">
+                <h1 id="resume-title">Resume / CV</h1>
+            </div>
+            <div id="experience"></div>
+        </div>
     </div>
 </section>
 
+<!-- Research -->
 <section id="research" class="hidden">
     <h1>Research</h1>
     <h3>Current Research Focus</h3>
@@ -62,6 +92,7 @@
     <p><strong>Topic B:</strong> Summary of your work in Radar Signal Processing, focusing on time-frequency distributions.</p>
 </section>
 
+<!-- Publications -->
 <section id="publications" class="hidden">
     <h1>Publications</h1>
     <ul>
@@ -70,17 +101,6 @@
         <li>"A Survey of Time-Frequency Analysis," *Signal Processing Letters*, 2023.</li>
     </ul>
 </section>
-
-<script>
-    function showSection(sectionId) {
-        // Hide all sections
-        const sections = document.querySelectorAll('section');
-        sections.forEach(sec => sec.classList.add('hidden'));
-        
-        // Show the selected section
-        document.getElementById(sectionId).classList.remove('hidden');
-    }
-</script>
 
 </body>
 </html>

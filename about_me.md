@@ -1,0 +1,3 @@
+# About Me
+
+Hello, my name is Jordan Garrett! As a **Research Scientist** working at the intersection of **Cognitive Neuroscience**, **AI/ML**, and **Human-Computer Interaction**, I apply insights across these disciplines to engineer intelligent systems that augment human cognition. My mission is to maximize the performance of human-AI teams. I strive to accomplish this goal by implementing **cutting-edge statical algorithms** and developing **intuitive user interfaces**. My work transforms complex data streams into **actionable insights** that ensures artificial agents are resilient and aligned with human goals, ultimately facilitating effective human decision-making in high-stakes environments.  
