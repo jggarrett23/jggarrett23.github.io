@@ -1,6 +1,5 @@
-# Resume / CV
----
-### Pacific Science & Engineering
+<h3 id="pacific-science">Pacific Science & Engineering</h3>
+
 #### Applied Cognitive Scientist
 
 May 2024-Present
@@ -18,7 +17,8 @@ May 2024-Present
 - Incorporated principles from **human-AI interaction** and cognitive science into **product design** to **improve usability** and **reduced cognitive load** for end users in operational contexts.
 
 ---
-### University of California, Santa Barbara
+<h3 id="ucsb-research">University of California, Santa Barbara</h3>
+
 #### Graduate Student Researcher
 
 July 2018-June 2024
@@ -37,7 +37,8 @@ July 2018-June 2024
 
 ---
 
-### Aimdyn, Inc
+<h3 id="aimdyn">Aimdyn, Inc</h3>
+
 #### Research Scientist
 
 June 2022-December 2023
@@ -51,7 +52,7 @@ June 2022-December 2023
 - Applied ideas from Koopman operator theory to analyze the spectral properties of neural network weight dynamics during training, which supported work on model interpretability and stability analysis.
 
 --- 
-### Fellowships
+<h3 id="fellowships">Fellowships</h3>
 
 - UCSB Graduate Research Mentorship Fellowship <span style="float:right;">2022–2023</span>
 
@@ -75,7 +76,7 @@ June 2022-December 2023
 
 
 ---
-### Awards
+<h3 id="awards">Awards</h3>
 
 - Kavli Summer Institute in Cognitive Neuroscience Fellow 2019
 
@@ -84,7 +85,69 @@ June 2022-December 2023
 - Ronald E. McNair Scholar, Cal Poly Pomona 2016-Present
 
 ---
-### Education
+
+<h3 id="presentations">Presentations</h3>
+
+- **Garrett J.**, Thayer, D., Sprague, T., & Giesbrecht, B., “Probing the prioritization
+of multiple spatial locations held within working memory.”
+    - Vision Sciences Society Annual Meeting <span style="float:right;">May 2023</span>
+- **Garrett, J**., Bullock, T., & Giesbrecht, B., “Tracking the contents of
+spatial working memory during an acute bout of aerobic exercise.”
+    - Virtual Working Memory Symposium*  <span style="float:right;">May 2020</span>
+    - UCSB Mini-convention*  <span style="float:right;">May 2020</span>
+    - Vision Sciences Society Annual Meeting <span style="float:right;">May 2019</span>
+- **Garrett, J**., & Blumenfeld, R., “The Functional Coactivation Network
+of the Prefrontal Cortex”
+    - Western Psychological Association Convention* <span style="float:right;">April 2018</span>
+    - 31st Annual California State University Research Competition*  <span style="float:right;">April 2017</span>
+    - 5th Annual CPP Student RCSA Conference* <span style="float:right;">March 2017</span>
+    - Western University of Health Sciences Neuroscience Symposium <span style="float:right;">Sept 2017</span>
+    - Cognitive Neuroscience Society Annual Meeting <span style="float:right;">March 2017</span> 
+
+<span style="font-style: italic; font-size: 14px; color: #666">Talks are denoted by a *</span>
+
+---
+
+<h3 id="teaching">Teaching Experience</h3>
+
+Teaching Assistant, University of California, Santa Barbara <span style="float:right;">2019-2024</span>
+    
+#### Graduate-Level Courses
+
+- PSY 221B: Statistical Design & Measurement
+    - Responsibilities: Educated students on how to perform hypothesis testing with the general linear model in R and assess model performance through diagnostic tests. 
+    - Class Size: **12** students.
+
+#### Undergraduate-Level Courses
+- PSY 163TS/ PSY 594TS: Models of Working Memory
+    - Responsibilities: Developed exam questions and led discussions on empirical articles. 
+    - Class Size: **80** undergraduate and **2** graduate students.
+
+- PSY 118L: Attention Laboratory
+    - Responsibilities: Guided students in completing human subjects research projects, with a focus on attention, from the development to write-up stages. 
+    - Class Size: **20** students.
+
+- PSY 10B: Statistical Methods in Psychology
+    - Responsibilities: Instructed students remotely on introductory statistical methods (e.g., t-test, ANOVA, regression) and implementing them in R. 
+    - Class Size: **30** students.
+
+---
+
+<h3 id="mentorship">Mentorship</h3>
+
+- UCSB/Army Summer Applied Biotechnology Undergraduate Experience <span style="float:right;">2019</span>
+    - Supervised two undergraduate students in the completion of a novel translational research study applying mobile neuroimaging to study the neural correlates of basketball free-throw performance. Trained them in constructing data analysis pipelines in MATLAB.
+
+- UCSB Black Student Engagement Program <span style="float:right;">2018</span>
+    - Aided in creating an environment wherein Black students can thrive holistically in the university and beyond.
+    - Educated my mentee in programming (e.g., Web Scraping), on how to converse with professors, and the process of applying to graduate school Helped her acquire a position as a research assistant in a lab on campus. 
+
+- Psychology Peer Mentor, Cal Poly Pomona <span style="float:right;">2016-2017</span>
+    - Counseled students on developing an enriching academic plan for their undergraduate experience, with an emphasis on first generation, underrepresented, and/or low-income individuals. 
+
+---
+
+<h3 id="education">Education</h3>
 University of California, Santa Barbara <span style="float:right;">June 2024</span>
 
 <div style="margin-left: 20px;">
