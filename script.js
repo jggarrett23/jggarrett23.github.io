@@ -20,6 +20,9 @@ loadMarkdownContent('about_me.md', 'about-text');
 // Resume / CV
 loadMarkdownContent('resume_cv.md', 'experience');
 
+// Research
+loadMarkdownContent('research.md', 'research-projects')
+
 // Initialize everything when the page loads
 window.onload = () => {
     loadMarkdownContent();
@@ -34,21 +37,32 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.remove('hidden');
 }
 
-function toggleResumeMenu() {
-    const sidebar = document.getElementById('resume-sidebar');
-    const hamIcon = document.getElementById('ham-icon');
-    const backIcon = document.getElementById('back-icon');
-    const menuBtn = document.getElementById('resume-menu-btn'); // Grab the button too
-
-    // Toggle the sidebar
-    sidebar.classList.toggle('active');
+function toggleNav() {
+    const sidebar = document.getElementById("sidebar");
+    const content = document.getElementById("main-content");
     
-    // Swap icons and button state
-    if (sidebar.classList.contains('active')) {
-        hamIcon.style.setProperty('display', 'none', 'important');
-        backIcon.style.setProperty('display', 'inline-block', 'important');
-    } else {
-        hamIcon.style.setProperty('display', 'inline-block', 'important');
-        backIcon.style.setProperty('display', 'none', 'important');
-    }
+    sidebar.classList.toggle("active");
+    content.classList.toggle("shifted");
 }
+
+function openPoster(filePath) {
+    const modal = document.getElementById("poster-modal");
+    const frame = document.getElementById("modal-frame");
+    
+    frame.src = filePath;
+    modal.style.display = "block";
+    
+    // Disable background scrolling while modal is open
+    document.body.style.overflow = "hidden";
+}
+
+// Close logic
+document.addEventListener('click', function(e) {
+    const modal = document.getElementById("poster-modal");
+    // Close if "X" is clicked OR if user clicks the blurred background
+    if (e.target.classList.contains('close-modal') || e.target === modal) {
+        modal.style.display = "none";
+        document.getElementById("modal-frame").src = ""; // Stop loading PDF
+        document.body.style.overflow = "auto"; // Re-enable scrolling
+    }
+});

@@ -13,64 +13,167 @@ body {
     background-color: var(--bg-color);
 }
 
-/* Navigation */
-nav {
-    background: var(--primary-color);
-    color: #fff;
-    padding: 1rem 0;
-    position: sticky;
-    top: 0;
+
+/* Sidebar Style */
+#sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
     z-index: 1000;
+    top: 0;
+    left: -250px; /* Hidden by default */
+    background-color: #f9f9f9;
+    overflow-x: hidden;
+    transition: 0.3s; /* Smooth slide effect */
+    padding-top: 60px;
+}
+
+/* Show class to be toggled by JS */
+#sidebar.active {
+    left: 0;
 }
 
 .nav-container {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
+    list-style-type: none;
     padding: 0;
 }
 
-.nav-container li {
-    position: relative;
-    padding: 0 15px;
-}
-
-nav a {
-    color: #fff;
+.nav-container li a {
+    padding: 15px 25px;
     text-decoration: none;
-    font-weight: bold;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: var(--accent-color);
-}
-
-/* Dropdown Logic */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #fff;
-    min-width: 220px;
-    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
-    z-index: 1;
-    top: 100%;
-}
-
-.dropdown-content a {
+    font-size: 1.2rem;
     color: var(--primary-color);
-    padding: 12px 16px;
     display: block;
-    border-bottom: 1px solid #eee;
+    transition: 0.2s;
 }
 
-.dropdown-content a:hover {
-    background-color: #f1f1f1;
+.nav-container li a:hover {
+    background-color: #f1f0f0;
 }
 
-.dropdown:hover .dropdown-content {
-    display: block;
+/* Menu & Close Buttons */
+.menu-btn {
+    font-size: 30px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    position: fixed;
+    top: 50px;
+    left: 50px;
+    z-index: 999;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    font-size: 36px;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-content {
+    transition: margin-left 0.3s; /* Matches sidebar speed */
+    padding: 20px;
+}
+
+/* When the sidebar is active, push the content over */
+#sidebar.active ~ .main-content {
+    margin-left: 250px; /* Same as sidebar width */
+    width: calc(100% - 250px); /* Shrinks the width so it doesn't overflow the screen */
+}
+
+.main-content.shifted {
+    margin-left: 250px;
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner {
+    position: relative; 
+    display: flex;
+    width: 100%;
+    height: 400px;
+    background-image: url('assets/img/banner_wave_bright_crop.JPG'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    overflow: hidden; 
+    align-items: center;
+}
+
+.banner-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: c;
+    width: 98%;
+    z-index: 2;
+}
+
+#banner-title {
+    width: 100%;
+    text-align: start;
+    margin-left: 40px;
+}
+
+#banner-roles {
+    width: 100%;
+    text-align: start;
+    margin-left: 40px;
+}
+
+.explore-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Aligns h2 and hr to the left */
+    padding: 50px 10%;
+}
+
+.explore-content hr {
+    width: 100%;           /* Or whatever width you prefer for the line */
+    margin: 0 0 30px 0;  /* Spacing: Top, Right, Bottom, Left */
+    border: 1px solid #f0efef7e;
+}
+
+.explore-content-grid-container {
+    display: flex;
+    width: 100%;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.explore-content-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    place-content: center;
+    width: 100%;
+    max-width: 900px;       /* Constrains the grid width */
+}
+
+.tile-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.explore-tile {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+}
+
+.explore-image {
+    width: 250px;
+    height: 250px;
+    object-position: center;
+    object-fit: contain;
+    border: solid 1px;
+    border-radius: 50%;
+
 }
 
 /* Section Styling */
@@ -84,7 +187,19 @@ section {
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.hidden { display: none; }
+.hidden {
+    display: none !important;
+}
+
+/* Optional: Add a fade-in effect for the revealed section */
+section:not(.hidden) {
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
 
 h1, h2 { color: var(--primary-color); }
 
@@ -95,6 +210,44 @@ h1, h2 { color: var(--primary-color); }
 .bio-container {
     display: flex;
     width: 100%;
+}
+
+#headshot-contact-container {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+}
+
+#headshot-contact-container i {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+}
+
+.profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+     
+    margin-right: 0; /* Space between image and text */
+    margin-bottom: 15px; /* Space below if text is short */
+    
+    border: 3px solid var(--primary-color);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+#contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+#about-text {
+    text-align: left;
+    justify-content: left;
 }
 
 #tech-stack {
@@ -135,48 +288,6 @@ h1, h2 { color: var(--primary-color); }
     flex-shrink: 0;
 }
 
-.profile-pic {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    object-fit: cover;
-    
-    /* The wrapping magic */
-    float: left; 
-    margin-right: 30px; /* Space between image and text */
-    margin-bottom: 15px; /* Space below if text is short */
-    
-    border: 3px solid var(--primary-color);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-#contact-info {
-    display: flex;
-    justify-content: center;
-    justify-items: space-between;
-    gap: 10px;
-}
-
-#contact-info button {
-    border: solid 2px rgba(18, 102, 248, 1.0);
-    background: none;
-    color: rgba(18, 102, 248, 1.0);
-    font-size: 18px;
-    font-weight: 500;
-    padding: 5px;
-    border-radius: 10px;
-}
-
-#contact-info button:hover {
-    border: solid 2px rgba(18, 102, 248, 1.0);
-    background: rgba(18, 102, 248, 0.1);
-    color: rgba(18, 102, 248, 1.0);
-    font-size: 18px;
-    font-weight: 500;
-    padding: 5px;
-    border-radius: 10px;
-}
-
 .resume-container {
     display: flex;
     width: 100%;
@@ -185,7 +296,7 @@ h1, h2 { color: var(--primary-color); }
 }
 
 /* Sidebar: Permanent and Sticky */
-.resume-sidebar {
+#resume-sidebar {
     flex: 0 0 260px;
     height: calc(100vh - 100px);
     position: sticky;
@@ -253,12 +364,106 @@ h1, h2 { color: var(--primary-color); }
     color: #666;
 }
 
+.research-header-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.research-header-row i {
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+}
+
+.project-body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Aligns items to the top */
+    gap: 20px;               /* Space between image and text */
+    margin-top: 15px;
+}
+
+.project-image {
+    width: 550px;            /* Set your desired square size */
+    height: 300px;           /* Must match width for a square */
+    aspect-ratio: 1 / 1;     /* Forces square ratio */
+    object-fit: contain;       /* Ensures image isn't stretched */
+    object-position: center;
+    flex-shrink: 0;          /* Prevents image from getting squashed */
+    border-radius: 8px;
+    vertical-align: top;
+}
+
+.project-text {
+    flex: 1;                 /* Takes up the remaining horizontal space */
+}
+
+.more-info {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    vertical-align: center;
+}
+
+.project-links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+/* The Background Overlay */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 2000; /* Higher than nav/sidebar */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5); /* Dim background */
+    backdrop-filter: blur(8px); /* The blur effect */
+}
+
+/* The Box in the Middle */
+.modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 5vh auto; /* 5% from top */
+    padding: 20px;
+    width: 80%;
+    height: 85vh;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.3);
+}
+
+/* The Close Button (X) */
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: #f6f4f4;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 2001;
+}
+
+#modal-frame {
+    width: 100%;
+    height: 100%;
+}
+
+
 /* Responsive: Stack vertically on mobile */
 @media (max-width: 900px) {
     .resume-container {
         flex-direction: column;
     }
-    .resume-sidebar {
+    #resume-sidebar {
         flex: none;
         width: 100%;
         height: auto;
@@ -267,15 +472,13 @@ h1, h2 { color: var(--primary-color); }
         border-right: none;
         border-bottom: 1px solid #eee;
     }
-}
 
-/* Ensure smooth scrolling for anchors */
-html {
-    scroll-behavior: smooth;
-}
+    #resume-sidebar.active {
+        position: fixed;
+        z-index: 1000;
+        width: 80%;
+    }
 
-/* Responsive: On small screens, hide the push behavior */
-@media (max-width: 768px) {
     .profile-pic {
         float: none;
         display: block;
@@ -286,12 +489,21 @@ html {
         text-align: center;
     }
 
-    .resume-sidebar.active {
-        position: fixed;
-        z-index: 1000;
-        width: 80%;
+    .project-body {
+        flex-direction: column;
     }
+    .project-image {
+        width: 100%;         /* Full width on mobile */
+        height: auto;
+    }
+    
 }
+
+/* Ensure smooth scrolling for anchors */
+html {
+    scroll-behavior: smooth;
+}
+
 
 /* This ensures headers aren't hidden behind the nav bar when jumping to anchors */
 h1[id], h2[id], h3[id], h4[id] {

@@ -5,55 +5,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="script.js"></script>
-    <title>Jordan Garrett, PhD</title>
+    <title>Jordan Garrett, Phd Portfilio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 </head>
 <body>
 
-<nav>
+<button class="menu-btn" onclick="toggleNav()">☰</button>
+
+<nav id="sidebar">
+    <a href="javascript:void(0)" class="close-btn" onclick="toggleNav()">&times;</a>
+    
     <ul class="nav-container">
-        <li><a href="#" onclick="showSection('about')">About Me</a></li>
-        <li><a href="#" onclick="showSection('resume')">Resume / CV</a></li>
-        <li><a href="#" onclick="showSection('research')">Research</a></li>
-        <li><a href="#" onclick="showSection('projects')">Independent Projects</a></li>
+        <li><a href="#" onclick="showSection('home'); toggleNav()">Home</a></li>
+        <li><a href="#" onclick="showSection('research'); toggleNav()">Research</a></li>
+        <li><a href="#" onclick="showSection('projects'); toggleNav()">Independent Projects</a></li>
+        <li><a href="#" onclick="showSection('resume'); toggleNav()">Resume / CV</a></li>
+        <li><a href="#" onclick="showSection('about'); toggleNav()">About Me</a></li>
     </ul>
 </nav>
 
-<!-- About Me -->
-<section id="about">
-    <div class="bio-container">
-        <img src="headshot.jpeg" alt="Jordan Garrett" class="profile-pic">
-        <div id="about-text"></div>
+<div class="main-content">
+<!-- Hompage -->
+<section id="home">
+
+    <div class="banner">
+        <div class="banner-content-wrapper">
+            <h1 id="banner-title">Jordan Garrett, Ph.D.</h1>
+            <p id="banner-roles">Cognitive Neuroscience &bull; Data Science &bull; AI</p>
+        </div>
     </div>
-    <!--
-    <div id="contact-info">
-        <a href="https://github.com/jggarrett23">
-        <button>
-            Github
-            <i class="fa-solid fa-link"></i>
-        </button>
-        </a>
-        <a href="https://www.linkedin.com/in/jordan-garrett-979042211/">
-        <button>
-            LinkedIn
-            <i class="fa-solid fa-link"></i>
-        </button>
-        </a>
-        <a href="https://scholar.google.com/citations?hl=en&user=ltZLROgAAAAJ">
-        <button>
-            Google Scholar
-            <i class="fa-solid fa-link"></i>
-        </button>
-        </a>
+
+    <div class="explore-content">
+            <h2>Explore</h2>
+
+            <hr>
+            <div class="explore-content-grid-container">
+                <div class="explore-content-grid">
+                    <a href="#" class="tile-link" onclick="showSection('research')">
+                        <div class="explore-tile" id="explore-research">
+                            <img src="assets/img/research-img.PNG" class="explore-image">
+                            <h3>Research</h3>
+                        </div>
+                    </a>
+                    
+
+                    <a href="#" class="tile-link" onclick="showSection('projects')">
+                        <div class="explore-tile" id="explore-projects">
+                            <img src="assets/img/projects-img.png" class="explore-image">
+                            <h3>Projects</h3>
+                        </div>
+                    </a>
+
+                    <a href="#" class="tile-link" onclick="showSection('resume')">
+                        <div class="explore-tile" id="explore-resume">
+                            <img src="assets/img/resume-img.jfif" class="explore-image">
+                            <h3>Resume / CV</h3>
+                        </div>
+                    </a>
+
+                    <a href="#" class="tile-link" onclick="showSection('about')">
+                        <div class="explore-tile" id="about-me">
+                            <img src="assets/img/ai-mountain-beach-2.jfif" class="explore-image">
+                            <h3>About Me</h3>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
     </div>
-    -->
+
+
+</section>
+
+<!-- Research -->
+<section id="research" class="hidden">
+    <div class="research-container">
+        <div class="research-main-content">
+            <div class="research-header-row">
+                <h1 id="research-title">Research</h1>
+                <a href="https://scholar.google.com/citations?hl=en&user=ltZLROgAAAAJ">
+                    <i class="ai ai-google-scholar fa-lg fa-fw"></i>
+                </a>
+            </div>
+            <div id="research-projects"></div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects -->
+
+<section id="projects" class="hidden">
+    <h1>Projects</h1>
+    Under Construction
 </section>
 
 <!-- Resume / CV -->
 <section id="resume" class="hidden">
     <div class="resume-container">
-        <nav id="resume-sidebar" class="resume-sidebar">
+        <nav id="resume-sidebar">
             <h2 class="sidebar-title">Contents</h2>
             <ul class="sidebar-links">
                 <li><a href="#resume-title">Professional Experience</a>
@@ -81,18 +132,38 @@
     </div>
 </section>
 
-<!-- Research -->
-<section id="research" class="hidden">
-    <h1>Research</h1>
-    Under Construction
+
+<!-- About Me -->
+<section id="about" class="hidden">
+    <div class="bio-container">
+        <div id="headshot-contact-container">
+            <img src="assets/img/headshot.jpeg" alt="Jordan Garrett" class="profile-pic">
+            <div id="contact-info">
+                <a href="https://scholar.google.com/citations?hl=en&user=ltZLROgAAAAJ">
+                    <i class="ai ai-google-scholar fa-lg fa-fw"></i>
+                </a>
+                <a href="https://github.com/jggarrett23">
+                    <i class="fab fa-github fa-lg fa-w"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/jordan-garrett-979042211/">
+                    <i class="fab fa-linkedin fa-lg fa-fw"></i>
+                </a>
+            </div>
+        </div>
+        <div id="about-text"></div>
+    </div>
 </section>
 
-<!-- Projects -->
+<!-- Poster Modals -->
 
-<section id="projects" class="hidden">
-    <h1>Projects</h1>
-    Under Construction
-</section>
+<div id="poster-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <iframe src="" id="modal-frame" frameborder="0"></iframe>
+    </div>
+</div>
+
+</div>
 
 </body>
 </html>
