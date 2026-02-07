@@ -499,6 +499,107 @@ h1, h2 { color: var(--primary-color); }
         width: 100%;         /* Full width on mobile */
         height: auto;
     }
+
+    /* --- MOBILE OPTIMIZATIONS (Under 768px) --- */
+@media screen and (max-width: 768px) {
+    
+    /* 1. Prevent Sidebar from pushing content on mobile */
+    #sidebar.active ~ .main-content {
+        margin-left: 0;
+        width: 100%;
+        filter: blur(2px) brightness(0.7); /* Dim background instead of pushing */
+    }
+    
+    .main-content {
+        padding: 10px; /* Thinner gutters on mobile */
+    }
+
+    /* 2. Adjust Menu Button Position */
+    .menu-btn {
+        top: 20px;
+        left: 20px;
+        font-size: 24px;
+    }
+
+    /* 3. Banner Adjustments */
+    #home {
+        padding: 40px 15px; /* Reduce massive 80px padding */
+    }
+    
+    .banner {
+        height: 200px; /* Shorter banner for small screens */
+    }
+    
+    #banner-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    /* 4. The Explore Grid: 4 columns to 1 or 2 */
+    .explore-content-grid {
+        grid-template-columns: repeat(1, 1fr); /* Stack tiles vertically */
+        gap: 30px;
+    }
+
+    .explore-image {
+        width: 180px; /* Slightly smaller round images */
+        height: 180px;
+    }
+
+    /* 5. Bio and Tech Stack */
+    .bio-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #headshot-contact-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #tech-stack {
+        flex-direction: column; /* Stack "Stack" label above chips */
+    }
+
+    #stack-chips {
+        flex-wrap: wrap; /* Allow chips to wrap to next line */
+        justify-content: center;
+    }
+
+    /* 6. Sections & Resume */
+    section {
+        padding: 30px 15px; /* Remove the huge 80px left padding */
+        max-width: 100%;
+        margin-top: 10px;
+    }
+
+    .resume-main-content {
+        padding: 20px 10px; /* Reduce internal resume padding */
+    }
+
+    /* 7. Project Images */
+    .project-image {
+        width: 100% !important; /* Force image to container width */
+        height: auto; /* Maintain aspect ratio */
+        aspect-ratio: auto; 
+    }
+
+    .project-links {
+        flex-direction: column; /* Stack "Live Demo" and "GitHub" buttons */
+        gap: 10px;
+    }
+
+    /* 8. Modals (PDF Viewer) */
+    .modal-content {
+        width: 95%;
+        margin: 2vh auto;
+        height: 90vh;
+    }
+
+    #about-text {
+        text-align: left;
+    }
+}
     
 }
 
