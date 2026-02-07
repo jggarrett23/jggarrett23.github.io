@@ -29,7 +29,7 @@
 
 <div class="main-content">
 <!-- Hompage -->
-<section id="home">
+<section id="home" class="hidden">
 
     <div class="banner"></div>
     <div class="banner-content-wrapper">
@@ -96,21 +96,14 @@
 
 <!-- Projects -->
 
-<section id="projects" class="hidden">
+<section id="projects">
     <h1>Projects</h1>
-    <div class="project-header-bar">
-        <a href="#" onclick="hideProjectSection()" class="back-link">
-            <span class="arrow">←</span> Back to Projects
-        </a>
-        <span class="project-title">EEG Forecasting Manuscript</span>
+    <hr>
+    <div class="independent-projects-container">
+            <div id="independent-projects-grid">
+        </div>
     </div>
-    <iframe 
-        class="book-iframe"
-        src="/projects/eeg_forecast/" 
-        width="100%" 
-        height="850px" 
-        style="border:none;">
-    </iframe>
+    
 </section>
 
 <!-- Resume / CV -->

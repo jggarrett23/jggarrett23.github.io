@@ -21,7 +21,9 @@ loadMarkdownContent('about_me.md', 'about-text');
 loadMarkdownContent('resume_cv.md', 'experience');
 
 // Research
-loadMarkdownContent('research.md', 'research-projects')
+loadMarkdownContent('research.md', 'research-projects');
+
+loadMarkdownContent('projects.md', 'independent-projects-grid');
 
 // Initialize everything when the page loads
 window.onload = () => {
@@ -56,13 +58,6 @@ function openPoster(filePath) {
     document.body.style.overflow = "hidden";
 }
 
-function hideProjectSection() {
-    // Hide the projects section
-    document.getElementById('projects').classList.add('hidden');
-    
-    // Optional: Show your main landing page/grid again
-    // document.getElementById('main-portfolio').classList.remove('hidden');
-}
 
 // Close logic
 document.addEventListener('click', function(e) {
