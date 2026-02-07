@@ -1,6 +1,6 @@
 <div id="eeg-forecast" class="indep-proj">
     <img src="/assets/img/eeg_screen_3.jpg" class="indep-proj-img">
-    <a href="https://jggarrett23.github.io/EEG_Forecast_Book.github.io/" target="_blank" rel="noopener noreferrer">
+    <a href="https://jggarrett23.github.io/EEG_Forecast_Book/" target="_blank" rel="noopener noreferrer">
         <h3>Forecasting Neural Activity</h3>
     </a>
     <div id="eeg-forecast-text" class="indep-project-text">
