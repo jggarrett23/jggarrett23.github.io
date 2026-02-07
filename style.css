@@ -152,7 +152,7 @@ body {
 
 .explore-content-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     place-content: center;
     width: 100%;
@@ -170,10 +170,11 @@ body {
 }
 
 .explore-image {
-    width: 250px;
-    height: 250px;
-    object-position: center;
-    object-fit: contain;
+    width: 100%;           /* Fill the available grid space */
+    max-width: 250px;      /* But don't ever get bigger than 250px */
+    height: auto;          /* Keep aspect ratio */
+    aspect-ratio: 1 / 1;   /* Keeps it a perfect circle */
+    object-fit: cover;
     border: solid 1px;
     border-radius: 50%;
 
@@ -293,6 +294,7 @@ h1, h2 { color: var(--primary-color); }
 
 .resume-container {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     align-items: flex-start;
     position: relative;
@@ -323,6 +325,7 @@ h1, h2 { color: var(--primary-color); }
     padding: 40px 60px;
     padding-top: 0px;
     margin-top: 0px;
+    min-width: 300px;
 }
 
 /* Typography & Links */
@@ -383,6 +386,7 @@ h1, h2 { color: var(--primary-color); }
 .project-body {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     align-items: flex-start; /* Aligns items to the top */
     gap: 20px;               /* Space between image and text */
     margin-top: 15px;
@@ -401,6 +405,7 @@ h1, h2 { color: var(--primary-color); }
 
 .project-text {
     flex: 1;                 /* Takes up the remaining horizontal space */
+    min-width: 300px;
 }
 
 .more-info {
@@ -504,11 +509,19 @@ h1, h2 { color: var(--primary-color); }
 
 
 /* Responsive: Stack vertically on mobile */
-/*
-@media (max-width: 900px) {
+@media screen and (max-width: 900px) {
+    #about-text {
+        text-align: left;
+    }
+
     .resume-container {
         flex-direction: column;
     }
+
+    .resume-main-content {
+        padding: 20px 10px; /* Reduce internal resume padding */
+    }
+
     #resume-sidebar {
         flex: none;
         width: 100%;
@@ -532,7 +545,7 @@ h1, h2 { color: var(--primary-color); }
     }
 
     #about-text {
-        text-align: center;
+        text-align: left;
     }
 
     .project-body {
@@ -542,9 +555,8 @@ h1, h2 { color: var(--primary-color); }
         width: 100%;        
         height: auto;
     }
-
 }
-*/
+
 
     /* --- MOBILE OPTIMIZATIONS (Under 768px) --- */
 @media screen and (max-width: 700px) {
@@ -619,9 +631,6 @@ h1, h2 { color: var(--primary-color); }
         margin-top: 10px;
     }
 
-    .resume-main-content {
-        padding: 20px 10px; /* Reduce internal resume padding */
-    }
 
     /* 7. Project Images */
     .project-image {
@@ -640,48 +649,6 @@ h1, h2 { color: var(--primary-color); }
         width: 95%;
         margin: 2vh auto;
         height: 90vh;
-    }
-
-    #about-text {
-        text-align: left;
-    }
-
-    .resume-container {
-        flex-direction: column;
-    }
-    
-    #resume-sidebar {
-        flex: none;
-        width: 100%;
-        height: auto;
-        position: relative;
-        top: 0;
-        border-right: none;
-        border-bottom: 1px solid #eee;
-    }
-
-    #resume-sidebar.active {
-        position: fixed;
-        z-index: 1000;
-        width: 80%;
-    }
-
-    .profile-pic {
-        float: none;
-        display: block;
-        margin: 0 auto 20px;
-    }
-
-    #about-text {
-        text-align: center;
-    }
-
-    .project-body {
-        flex-direction: column;
-    }
-    .project-image {
-        width: 100%;        
-        height: auto;
     }
 }
     
