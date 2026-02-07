@@ -56,6 +56,14 @@ function openPoster(filePath) {
     document.body.style.overflow = "hidden";
 }
 
+function hideProjectSection() {
+    // Hide the projects section
+    document.getElementById('projects').classList.add('hidden');
+    
+    // Optional: Show your main landing page/grid again
+    // document.getElementById('main-portfolio').classList.remove('hidden');
+}
+
 // Close logic
 document.addEventListener('click', function(e) {
     const modal = document.getElementById("poster-modal");

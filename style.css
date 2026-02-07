@@ -460,8 +460,51 @@ h1, h2 { color: var(--primary-color); }
     height: 100%;
 }
 
+.full-page-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    border: none;
+    z-index: 9999;
+}
+
+.project-header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 15px 25px;
+    border-bottom: 1px solid #e1e4e8;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.back-link:hover {
+    color: #0056b3;
+}
+
+.project-title {
+    color: #586069;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.book-iframe {
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
 
 /* Responsive: Stack vertically on mobile */
+/*
 @media (max-width: 900px) {
     .resume-container {
         flex-direction: column;
@@ -496,9 +539,12 @@ h1, h2 { color: var(--primary-color); }
         flex-direction: column;
     }
     .project-image {
-        width: 100%;         /* Full width on mobile */
+        width: 100%;        
         height: auto;
     }
+
+}
+*/
 
     /* --- MOBILE OPTIMIZATIONS (Under 768px) --- */
 @media screen and (max-width: 700px) {
@@ -601,7 +647,6 @@ h1, h2 { color: var(--primary-color); }
     }
 }
     
-}
 
 /* Ensure smooth scrolling for anchors */
 html {
