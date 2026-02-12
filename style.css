@@ -509,10 +509,6 @@ h1, h2 { color: var(--primary-color); }
     width: 100%;
 }
 
-.img-attribution {
-    text-align: ceneter;
-    font-size: 1;
-}
 
 
 /* Responsive: Stack vertically on mobile */
