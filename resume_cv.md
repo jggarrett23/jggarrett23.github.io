@@ -10,6 +10,8 @@ May 2024-Present
   
   These prototypes demonstrated the feasibility of **AI-powered decision support tools** in resource constrained operational environments.
 
+- Built a high-performance, memory-safe **Rust** backend orchestrating LLM inference and **MongoDB** data storage for dynamic, AI-generated schemas and validation logic.  
+
 - Designed evaluation frameworks and **benchmarking protocols** that measured the **real-world utility**, accuracy, and **alignment** performance of open-source large language models (**LLMs**) in form completion and legal analysis.
 
 - Collected domain specific data through structured interviews with subject matter experts and used insights to build synthetic data generation pipelines that supported model benchmarking.
