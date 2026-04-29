@@ -157,7 +157,7 @@ University of California, Santa Barbara <span style="float:right;">June 2024</sp
     </span>
 </div>
 
-California Polytechnic State University, Pomona <span style="float:right;">June 2024</span>
+California Polytechnic State University, Pomona <span style="float:right;">June 2018</span>
 <div style="margin-left: 20px;">
     Degree: B.A. in Psychology
 </div>
